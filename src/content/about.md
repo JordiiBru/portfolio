@@ -2,19 +2,26 @@
 title: About Me
 ---
 
-Hi! My name is Jordi, a Computer Engineering graduate from UPC-FIB and a **Site Reliability Engineer**.
+Hi! My name is Jordi, a Computer Engineering graduate from UPC-FIB and a **Platform Engineer**.
 
-With a keen interest in **DevOps** practices, my current focus is on managing services and their infrastructure, specializing in cloud (AWS), Terraform, and Kubernetes.
+My background is rooted in **DevOps**: CI/CD pipelines, infrastructure automation, and bridging the gap between development and operations. Over time, that discipline has evolved into what we now call **Platform Engineering**, building internal developer platforms, self-service infrastructure, and scalable abstractions that let teams ship faster without sacrificing reliability.
 
-I run my own **homelab** with a k3s cluster, practicing GitOps and self-hosting services for fun and learning.
+I'm also deeply interested in **AI and automation**. I build AI-powered agents for personal use, from infrastructure monitoring to fitness tracking, and I enjoy understanding how things work under the hood.
 
-I relentlessly pursue what I am most passionate about in this sector, while dedicating myself to learning and creating efficient solutions.
+I work with **Kubernetes**, **Terraform**, **AWS**, and **Linux** on a daily basis, and I run my own homelab to keep experimenting outside of work.
 
 ## Skills
 
-- **Infrastructure:** Kubernetes, Terraform, AWS, Linux
-- **Languages:** Python, Go, Java, C
-- **Practices:** GitOps, CI/CD, Monitoring, IaC
+- **Infrastructure:** Kubernetes, Terraform, AWS, Proxmox, Linux
+- **Languages:** Go, Python, Java, C
+- **Practices:** GitOps, CI/CD, Platform Engineering, IaC, Observability
+
+## Languages
+
+- **Catalan** (native)
+- **Spanish** (native)
+- **English** (professional)
+- **German** (basic)
 
 ## Links
 
