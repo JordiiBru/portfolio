@@ -16,6 +16,8 @@ Full **GitOps** workflow. Manifests in Git, **ArgoCD** syncs automatically, all 
 - **Networking.** Traefik, ExternalDNS with Cloudflare, Tailscale, Nubulus tunnel.
 - **Monitoring.** Kube-Prometheus-Stack with Prometheus and Grafana.
 
+---
+
 ## Home Assistant
 
 **Home Assistant OS** running as a dedicated Proxmox VM. Automation beyond infrastructure, into everyday life.
@@ -26,12 +28,16 @@ Full **GitOps** workflow. Manifests in Git, **ArgoCD** syncs automatically, all 
 
 Every time I solve one thing, I find three more to automate.
 
+---
+
 ## Monitoring & bots
 
 Named after characters from [The Fairly OddParents](https://en.wikipedia.org/wiki/The_Fairly_OddParents), because every infrastructure needs its magic.
 
 - **Wanda.** Deterministic alerting bot. Predefined alerts from Prometheus straight to Telegram.
 - **Cosmo.** AI-powered SRE agent built on Claude. Monitors the cluster, diagnoses issues, runs read-only inspections, and creates tickets. Operates via Telegram, CLI, and [paseo.sh](https://github.com/JordiiBru/homelab) for autonomous agent sessions. Cosmo is multidisciplinary: beyond infrastructure, it handles fitness tracking, nutrition, and other areas, each with its own context window.
+
+---
 
 ## Custom keyboards
 
