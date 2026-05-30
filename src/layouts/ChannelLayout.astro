@@ -128,8 +128,6 @@ const { title } = Astro.props;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding-left: 0.75rem;
-    border-left: 3px solid #7c3aed;
   }
 
   .body h2:first-child {
@@ -171,14 +169,24 @@ const { title } = Astro.props;
   }
 
   .body a {
-    color: #7c3aed;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
+    color: #111;
+    text-decoration: none;
+    position: relative;
   }
 
-  .body a:hover {
-    text-decoration-thickness: 2px;
+  .body a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7c3aed;
+    transition: width 0.3s ease;
+  }
+
+  .body a:hover::after {
+    width: 100%;
   }
 
   .body strong {
