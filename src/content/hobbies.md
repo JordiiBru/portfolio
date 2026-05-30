@@ -24,9 +24,8 @@ Full **GitOps** workflow. Manifests in Git, **ArgoCD** syncs automatically, all 
 
 - **Laundry notifications.** Alerts when the washing machine finishes based on power consumption.
 - **Commute optimization.** Training a model to recommend when to leave home to avoid traffic.
-- **Climate and energy.** Schedules based on presence, weather, and electricity pricing.
 
-Every time I solve one thing, I find three more to automate.
+And more! Every time I solve one thing, I find three more to automate.
 
 ---
 
@@ -35,7 +34,7 @@ Every time I solve one thing, I find three more to automate.
 Named after characters from [The Fairly OddParents](https://en.wikipedia.org/wiki/The_Fairly_OddParents), because every infrastructure needs its magic.
 
 - **Wanda.** Deterministic alerting bot. Predefined alerts from Prometheus straight to Telegram.
-- **Cosmo.** AI-powered SRE agent built on Claude. Monitors the cluster, diagnoses issues, runs read-only inspections, and creates tickets. Operates via Telegram, CLI, and [paseo.sh](https://github.com/JordiiBru/homelab) for autonomous agent sessions. Cosmo is multidisciplinary: beyond infrastructure, it handles fitness tracking, nutrition, and other areas, each with its own context window.
+- **Cosmo.** AI-powered SRE agent built on Claude. Monitors the cluster, diagnoses issues, runs read-only inspections, and creates tickets. Operates via Telegram, CLI, and [paseo.sh](https://paseo.sh/) for autonomous agent sessions. Cosmo is multidisciplinary: beyond infrastructure, it handles fitness tracking, nutrition, and other areas, each with its own context window.
 
 ---
 

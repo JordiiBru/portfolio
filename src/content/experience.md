@@ -32,6 +32,6 @@ First hands-on experience with production Kubernetes, cloud infrastructure, and 
 ---
 
 ## Education
+<span class="date">2023</span>
 
 **Computer Engineering** | UPC-FIB (Universitat Politecnica de Catalunya)
-<span class="date">2023</span>
