@@ -170,23 +170,16 @@ const { title } = Astro.props;
 
   .body a {
     color: #111;
-    text-decoration: none;
-    position: relative;
+    text-decoration: underline;
+    text-decoration-color: #ccc;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s ease;
   }
 
-  .body a::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #7c3aed;
-    transition: width 0.3s ease;
-  }
-
-  .body a:hover::after {
-    width: 100%;
+  .body a:hover {
+    text-decoration-color: #7c3aed;
+    text-decoration-thickness: 2px;
   }
 
   .body strong {
