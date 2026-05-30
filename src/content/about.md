@@ -12,6 +12,21 @@ I work daily with **Kubernetes**, **Terraform**, **AWS**, and **Linux**, and I r
 
 ---
 
+## Skills
+
+- **Infrastructure:** Kubernetes, Terraform, AWS, Proxmox, Linux
+- **Languages:** Go, Python, Java, C
+- **Practices:** GitOps, CI/CD, Platform Engineering, IaC, Observability
+
+## Languages
+
+- **Catalan** (native)
+- **Spanish** (native)
+- **English** (professional)
+- **German** (intermediate, B2)
+
+---
+
 ## Life
 
 I love nature and animals. Currently living with my three dogs: Kiwi, Groucho, and Wanda (not the bot). I played basketball for most of my life, and even though I don't play anymore, the discipline and teamwork stuck with me.
@@ -26,23 +41,8 @@ Still learning. Getting into the math behind nutrition and training, and buildin
 
 ## Media
 
-- [Project Hail Mary](https://www.imdb.com/title/tt12042730/)
-- [The Office](https://www.imdb.com/title/tt0386676/)
-
----
-
-## Skills
-
-- **Infrastructure:** Kubernetes, Terraform, AWS, Proxmox, Linux
-- **Languages:** Go, Python, Java, C
-- **Practices:** GitOps, CI/CD, Platform Engineering, IaC, Observability
-
-## Languages
-
-- **Catalan** (native)
-- **Spanish** (native)
-- **English** (professional)
-- **German** (intermediate, B2)
+- One movie: [Project Hail Mary](https://www.imdb.com/title/tt12042730/)
+- One show: [The Office](https://www.imdb.com/title/tt0386676/)
 
 ---
 
