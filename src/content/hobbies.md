@@ -32,3 +32,12 @@ Named after characters from [The Fairly OddParents](https://en.wikipedia.org/wik
 
 - **Wanda.** Deterministic alerting bot. Predefined alerts from Prometheus straight to Telegram.
 - **Cosmo.** AI-powered SRE agent built on Claude. Monitors the cluster, diagnoses issues, runs read-only inspections, and creates tickets. Operates via Telegram, CLI, and [paseo.sh](https://github.com/JordiiBru/homelab) for autonomous agent sessions. Cosmo is multidisciplinary: beyond infrastructure, it handles fitness tracking, nutrition, and other areas, each with its own context window.
+
+## Custom keyboards
+
+I build mechanical keyboards from scratch. Picking every component, lubing switches and stabilizers, tuning the sound profile.
+
+My current rotation:
+
+- **Office.** Neo65, Gateron Oil Kings, PC plate, lubed Durock V2 stabilizers.
+- **Gaming.** Tofu60 Redux, BM60 PCB, HMX Macchiato switches, PC plate, lubed Durock V2 stabilizers.

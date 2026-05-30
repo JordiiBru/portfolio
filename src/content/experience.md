@@ -22,11 +22,16 @@ First hands-on experience with production Kubernetes, cloud infrastructure, and 
 - Infrastructure automation and internal tooling.
 - Fundamentals of production reliability at scale.
 
+---
+
 ## Certifications
 
 - **HashiCorp Terraform Associate 003**
 - **Akamai Web Foundations**
 
+---
+
 ## Education
 
 **Computer Engineering** | UPC-FIB (Universitat Politecnica de Catalunya)
+<span class="date">2023</span>
