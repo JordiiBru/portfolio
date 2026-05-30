@@ -1,0 +1,9 @@
+---
+import ChannelLayout from '../layouts/ChannelLayout.astro';
+const content = await import('../content/projects.md');
+const { Content } = content;
+---
+
+<ChannelLayout title="Projects">
+  <Content />
+</ChannelLayout>

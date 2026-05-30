@@ -1,0 +1,198 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+    <title>{title} — Jordi Bru</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <a href="/" class="back">&larr; Index</a>
+        <span class="label">{title}</span>
+      </header>
+      <article class="content">
+        <h1 class="page-title">{title}</h1>
+        <div class="body">
+          <slot />
+        </div>
+      </article>
+      <footer class="footer">
+        <a href="/">Jordi Bru</a>
+        <span>&copy; 2026</span>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #111;
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #111;
+    margin-bottom: 4rem;
+  }
+
+  .back {
+    font-size: 0.875rem;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .back:hover {
+    text-decoration: underline;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #999;
+    font-weight: 700;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 3rem;
+  }
+
+  .body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #333;
+  }
+
+  .body h2 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #111;
+    margin-top: 3rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .body h2:first-child {
+    margin-top: 0;
+  }
+
+  .body p {
+    margin-bottom: 1.25rem;
+  }
+
+  .body ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    list-style-type: '— ';
+  }
+
+  .body li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.25rem;
+  }
+
+  .body a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .body a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .body strong {
+    font-weight: 700;
+    color: #111;
+  }
+
+  .body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2.5rem 0;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #111;
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .footer a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: #111;
+  }
+
+  @media (max-width: 600px) {
+    .page {
+      padding: 2rem 1.25rem;
+    }
+
+    .header {
+      margin-bottom: 2.5rem;
+    }
+  }
+</style>

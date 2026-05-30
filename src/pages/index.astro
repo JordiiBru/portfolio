@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  { name: 'About', href: '/about', number: '01' },
+  { name: 'Experience', href: '/experience', number: '02' },
+  { name: 'Projects', href: '/projects', number: '03' },
+  { name: 'Talks', href: '/talks', number: '04' },
+  { name: 'Hobbies', href: '/hobbies', number: '05' },
+];
+---
+
+<Layout title="Jordi Bru">
+  <div class="page">
+    <header class="header">
+      <div class="header-top">
+        <span class="name">Jordi Bru</span>
+        <nav class="header-links">
+          <a href="https://github.com/JordiiBru" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/jordi-bru-carci/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+      </div>
+      <h1 class="title">Platform Engineer</h1>
+      <p class="subtitle">SRE @ Mango — infrastructure, automation, and everything in between.</p>
+    </header>
+
+    <nav class="sections">
+      {sections.map((s) => (
+        <a href={s.href} class="section-link">
+          <span class="section-number">{s.number}</span>
+          <span class="section-name">{s.name}</span>
+          <span class="section-arrow">&rarr;</span>
+        </a>
+      ))}
+    </nav>
+
+    <footer class="footer">
+      <span>Barcelona</span>
+      <span>&copy; 2026</span>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .header {
+    margin-bottom: 6rem;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #111;
+  }
+
+  .name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .header-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .header-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    position: relative;
+  }
+
+  .header-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #111;
+    transition: width 0.3s ease;
+  }
+
+  .header-links a:hover::after {
+    width: 100%;
+  }
+
+  .title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #666;
+    max-width: 400px;
+  }
+
+  .sections {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+  }
+
+  .section-link {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #ddd;
+    transition: padding-left 0.3s ease;
+    cursor: pointer;
+  }
+
+  .section-link:hover {
+    padding-left: 1.5rem;
+  }
+
+  .section-link:hover .section-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .section-number {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #999;
+    width: 3rem;
+    flex-shrink: 0;
+  }
+
+  .section-name {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    flex: 1;
+  }
+
+  .section-arrow {
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+    margin-top: 4rem;
+    border-top: 1px solid #111;
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 600px) {
+    .page {
+      padding: 2rem 1.25rem;
+    }
+
+    .header {
+      margin-bottom: 3rem;
+    }
+
+    .header-top {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-link {
+      padding: 1.5rem 0;
+    }
+  }
+</style>
