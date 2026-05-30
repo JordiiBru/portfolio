@@ -12,6 +12,8 @@ A self-hosted k3s Kubernetes cluster running on Proxmox, with a full GitOps work
 
 A set of **n8n workflows** that scrape KFC promotions, parse combo pricing, and calculate the optimal order based on what I want to eat. Built with web scraping, form handling, and an optimizer logic node. One of those absurd side projects that actually saves money.
 
+---
+
 ## Dotfiles
 
 My personal development environment configuration: shell, editor, tools, and system setup. Public but always evolving.
@@ -21,6 +23,8 @@ My personal development environment configuration: shell, editor, tools, and sys
 ## Terraform Monorepo
 
 A scalable solution for managing Infrastructure as Code using Terraform. Includes an automated CI/CD pipeline with Terragrunt, TFLint, TFSec, and Infracost for efficient, secure, and cost-effective infrastructure management.
+
+---
 
 ## Side projects & tooling
 

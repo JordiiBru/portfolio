@@ -13,7 +13,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
-    <title>{title} — Jordi Bru Carci</title>
+    <title>{title} | Jordi Bru Carci</title>
   </head>
   <body>
     <div class="page">
@@ -51,9 +51,14 @@ const { title } = Astro.props;
     -webkit-font-smoothing: antialiased;
   }
 
-  ::selection {
-    background: #111;
-    color: #fff;
+  *::selection {
+    background: #fde68a !important;
+    color: #111 !important;
+  }
+
+  *::-moz-selection {
+    background: #fde68a !important;
+    color: #111 !important;
   }
 
   a {
@@ -73,9 +78,9 @@ const { title } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #111;
-    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #7c3aed;
+    margin-bottom: 3rem;
   }
 
   .back {
@@ -86,7 +91,7 @@ const { title } = Astro.props;
   }
 
   .back:hover {
-    text-decoration: underline;
+    color: #7c3aed;
   }
 
   .label {
@@ -102,25 +107,25 @@ const { title } = Astro.props;
   }
 
   .page-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
     letter-spacing: -0.03em;
     line-height: 1;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .body {
-    font-size: 1.0625rem;
+    font-size: 1rem;
     line-height: 1.75;
     color: #333;
   }
 
   .body h2 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 900;
     color: #111;
-    margin-top: 3rem;
-    margin-bottom: 0.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -129,28 +134,51 @@ const { title } = Astro.props;
     margin-top: 0;
   }
 
+  .body h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .body .date {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
   .body p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .body ul {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     padding-left: 1.25rem;
-    list-style-type: '— ';
+    list-style-type: '- ';
   }
 
   .body li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
     padding-left: 0.25rem;
   }
 
   .body a {
+    color: #111;
     text-decoration: underline;
+    text-decoration-color: #ccc;
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s ease;
   }
 
   .body a:hover {
+    text-decoration-color: #7c3aed;
     text-decoration-thickness: 2px;
   }
 
@@ -162,15 +190,15 @@ const { title } = Astro.props;
   .body hr {
     border: none;
     border-top: 1px solid #ddd;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
   }
 
   .footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #111;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 2px solid #7c3aed;
     font-size: 0.75rem;
     color: #999;
     text-transform: uppercase;
@@ -183,7 +211,7 @@ const { title } = Astro.props;
   }
 
   .footer a:hover {
-    color: #111;
+    color: #7c3aed;
   }
 
   @media (max-width: 600px) {
@@ -192,7 +220,7 @@ const { title } = Astro.props;
     }
 
     .header {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
   }
 </style>
