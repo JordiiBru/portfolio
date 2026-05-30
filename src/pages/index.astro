@@ -17,12 +17,14 @@ const sections = [
       <div class="header-top">
         <span class="name">Jordi Bru Carci</span>
         <nav class="header-links">
+          <a href="mailto:jordibru00@gmail.com">Email</a>
           <a href="https://github.com/JordiiBru" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/jordi-bru-carci/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </nav>
       </div>
       <h1 class="title">Platform Engineer</h1>
-      <p class="subtitle">SRE @ Mango — infrastructure, automation, and everything in between.</p>
+      <p class="role">SRE @ Mango</p>
+      <p class="subtitle">Infrastructure, automation, and everything in between.</p>
     </header>
 
     <nav class="sections">
@@ -49,19 +51,19 @@ const sections = [
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
   }
 
   .header {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
 
   .header-top {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 4rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
     border-bottom: 2px solid #7c3aed;
   }
 
@@ -74,7 +76,7 @@ const sections = [
 
   .header-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .header-links a {
@@ -100,15 +102,23 @@ const sections = [
   }
 
   .title {
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 900;
     line-height: 0.95;
     letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .role {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #7c3aed;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
   }
 
   .subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 400;
     color: #666;
     max-width: 400px;
@@ -124,7 +134,7 @@ const sections = [
   .section-link {
     display: flex;
     align-items: center;
-    padding: 2rem 0;
+    padding: 1.25rem 0;
     border-bottom: 1px solid #ddd;
     transition: padding-left 0.3s ease;
     cursor: pointer;
@@ -148,14 +158,14 @@ const sections = [
   }
 
   .section-name {
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1.25rem, 3vw, 2rem);
     font-weight: 900;
     letter-spacing: -0.02em;
     flex: 1;
   }
 
   .section-arrow {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     opacity: 0;
     color: #7c3aed;
     transform: translateX(-10px);
@@ -165,8 +175,8 @@ const sections = [
   .footer {
     display: flex;
     justify-content: space-between;
-    padding-top: 3rem;
-    margin-top: 4rem;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
     border-top: 2px solid #7c3aed;
     font-size: 0.75rem;
     color: #999;
@@ -176,19 +186,19 @@ const sections = [
 
   @media (max-width: 600px) {
     .page {
-      padding: 2rem 1.25rem;
+      padding: 1.5rem 1.25rem;
     }
 
     .header {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .header-top {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .section-link {
-      padding: 1.5rem 0;
+      padding: 1rem 0;
     }
   }
 </style>
