@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard"
+  ],
+  "timezone": "Europe/Madrid",
+  "schedule": ["every weekend"],
+  "prConcurrentLimit": 3,
+  "enabledManagers": ["npm", "github-actions", "dockerfile"],
+  "separateMajorMinor": true,
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm minor y patch",
+      "labels": ["dependencies", "renovate"]
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major"],
+      "commitMessagePrefix": "chore(deps)!:",
+      "prBodyNotes": [
+        ":warning: **Major version bump.** Leer release notes antes de mergear."
+      ]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "labels": ["dependencies", "renovate"]
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "Dockerfile base images",
+      "labels": ["dependencies", "renovate"]
+    }
+  ]
+}
