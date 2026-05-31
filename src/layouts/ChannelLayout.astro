@@ -11,8 +11,11 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={`Jordi Bru Carci — ${title}. Platform Engineer @ Mango.`} />
     <link rel="icon" type="image/png" href="/faro.png" />
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" /></noscript>
     <title>{title} | Jordi Bru Carci</title>
   </head>
   <body>
@@ -97,7 +100,7 @@ const { title } = Astro.props;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #999;
+    color: #767676;
     font-weight: 700;
   }
 
@@ -150,7 +153,7 @@ const { title } = Astro.props;
     display: block;
     font-size: 0.8rem;
     font-weight: 400;
-    color: #999;
+    color: #767676;
     letter-spacing: 0.05em;
     margin-bottom: 0.75rem;
   }
@@ -202,13 +205,13 @@ const { title } = Astro.props;
     padding-top: 1rem;
     border-top: 2px solid #7c3aed;
     font-size: 0.75rem;
-    color: #999;
+    color: #767676;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 
   .footer a {
-    color: #999;
+    color: #767676;
     text-decoration: none;
   }
 
