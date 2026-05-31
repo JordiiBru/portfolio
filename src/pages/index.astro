@@ -184,8 +184,10 @@ const sections = [
     transition: border-color 0.3s ease;
   }
 
-  .avatar:hover::before {
-    border-color: #7c3aed;
+  @media (hover: hover) {
+    .avatar:hover::before {
+      border-color: #7c3aed;
+    }
   }
 
   .avatar.flipped::before {
@@ -310,15 +312,15 @@ const sections = [
     }
 
     .hero {
-      flex-direction: column-reverse;
-      align-items: center;
-      text-align: center;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 1.5rem;
     }
 
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
+      align-self: flex-start;
     }
 
     .section-link {
