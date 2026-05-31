@@ -20,9 +20,19 @@ const sections = [
           <a href="https://www.linkedin.com/in/jordi-bru-carci/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </nav>
       </div>
-      <h1 class="title">Platform Engineer</h1>
-      <p class="role">SRE @ Mango</p>
-      <p class="subtitle">Infrastructure, automation, and everything in between.</p>
+      <div class="hero">
+        <div class="hero-text">
+          <h1 class="title">Platform Engineer</h1>
+          <p class="role">SRE @ Mango</p>
+          <p class="subtitle">Infrastructure, automation, and everything in between.</p>
+        </div>
+        <button class="avatar" id="avatar" aria-label="Flip profile image" tabindex="0">
+          <div class="avatar-inner" id="avatar-inner">
+            <img src="/profile_pics/notion_icon.png" alt="Jordi Bru Carci" class="avatar-face avatar-front" />
+            <img src="/profile_pics/linkedin_icon.png" alt="Jordi Bru Carci" class="avatar-face avatar-back" />
+          </div>
+        </button>
+      </div>
     </header>
 
     <nav class="sections">
@@ -41,6 +51,25 @@ const sections = [
     </footer>
   </div>
 </Layout>
+
+<script>
+  const btn = document.getElementById('avatar');
+  const inner = document.getElementById('avatar-inner');
+  if (btn && inner) {
+    let flipped = false;
+    btn.addEventListener('click', () => {
+      flipped = !flipped;
+      inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      btn.classList.toggle('flipped', flipped);
+    });
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  }
+</script>
 
 <style>
   .page {
@@ -99,6 +128,17 @@ const sections = [
     width: 100%;
   }
 
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
   .title {
     font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 900;
@@ -119,6 +159,83 @@ const sections = [
     font-size: 1rem;
     font-weight: 400;
     color: #666;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    perspective: 600px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+  }
+
+  .avatar::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px dashed #ccc;
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+    transition: border-color 0.3s ease;
+  }
+
+  @media (hover: hover) {
+    .avatar:hover::before {
+      border-color: #7c3aed;
+    }
+  }
+
+  .avatar.flipped::before {
+    border-color: #7c3aed;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .avatar:focus-visible .avatar-inner {
+    box-shadow: 0 0 0 3px #7c3aed;
+    border-radius: 50%;
+  }
+
+  .avatar-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 400ms ease;
+    border-radius: 50%;
+  }
+
+  .avatar-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .avatar-back {
+    transform: rotateY(180deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .avatar-inner {
+      transition: none;
+    }
+    .avatar::before {
+      animation: none;
+    }
   }
 
   .sections {
@@ -192,6 +309,11 @@ const sections = [
 
     .header-top {
       margin-bottom: 1.5rem;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
     }
 
     .section-link {
