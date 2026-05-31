@@ -60,6 +60,7 @@ const sections = [
     btn.addEventListener('click', () => {
       flipped = !flipped;
       inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      btn.classList.add('discovered');
     });
     btn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -170,6 +171,33 @@ const sections = [
     padding: 0;
     cursor: pointer;
     outline: none;
+    position: relative;
+  }
+
+  .avatar::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 1.5px dashed #bbb;
+    border-radius: 50%;
+    animation: orbit 12s linear infinite;
+    transition: opacity 0.6s ease;
+  }
+
+  .avatar.discovered::before {
+    opacity: 0;
+  }
+
+  .avatar:hover::before {
+    border-color: #7c3aed;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   .avatar:focus-visible .avatar-inner {
@@ -205,6 +233,9 @@ const sections = [
   @media (prefers-reduced-motion: reduce) {
     .avatar-inner {
       transition: none;
+    }
+    .avatar::before {
+      animation: none;
     }
   }
 
