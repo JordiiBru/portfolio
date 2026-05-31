@@ -7,11 +7,13 @@
 - Two layouts: `Layout.astro` (index), `ChannelLayout.astro` (section pages)
 
 ## Design
-- Editorial minimalist, inspired by Onomatopee / Inventory Press
-- Font: Inter (400, 700, 900)
-- Black on white with **lila (#7c3aed)** as accent: borders, arrows, link color, hover states
-- **Yellow (#fde68a)** for text selection highlight
-- No shadows, no border-radius, no decorative elements. Typography and whitespace only.
+Editorial minimalist aesthetic, inspired by Onomatopee / Inventory Press. The visual language is built entirely on typography and whitespace. No shadows, no border-radius, no decorative elements.
+
+- **Base:** Black (`#111`) on white. High contrast, flat, no noise.
+- **Font:** Inter (400, 700, 900). Weight and size carry all hierarchy.
+- **Lila (`#7c3aed`):** Used sparingly as accent only. Structural dividers (top/bottom `border`), hover underlines on links, arrow color on section rows, and active/flipped states on the avatar ring. Not for body text or backgrounds.
+- **Yellow (`#fde68a`):** Text selection highlight only.
+- When adding new UI elements, default to black/grey. Reach for lila only for interactive affordances or key structural lines.
 
 ## Sections
 1. About (`/about`)

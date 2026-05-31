@@ -23,7 +23,7 @@ const sections = [
       <div class="hero">
         <div class="hero-text">
           <h1 class="title">Platform Engineer</h1>
-          <p class="role">SRE @ Mango</p>
+          <p class="role">@ Mango</p>
           <p class="subtitle">Infrastructure, automation, and everything in between.</p>
         </div>
         <button class="avatar" id="avatar" aria-label="Flip profile image" tabindex="0">
@@ -130,7 +130,6 @@ const sections = [
 
   .hero {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 2rem;
   }
@@ -162,8 +161,8 @@ const sections = [
   }
 
   .avatar {
-    width: 120px;
-    height: 120px;
+    width: clamp(100px, 16vw, 220px);
+    height: clamp(100px, 16vw, 220px);
     flex-shrink: 0;
     perspective: 600px;
     background: none;
