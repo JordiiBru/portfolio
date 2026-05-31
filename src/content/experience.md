@@ -34,4 +34,6 @@ First hands-on experience with production Kubernetes, cloud infrastructure, and 
 ## Education
 <span class="date">2023</span>
 
-**Computer Engineering** | UPC-FIB (Universitat Politecnica de Catalunya)
+**Computer Engineering, [Information Technologies](https://www.fib.upc.edu/es/grados/grado-en-ingenieria-informatica/plan-de-estudios/especialidades/tecnologias-de-la-informacion)** | UPC-FIB (Universitat Politecnica de Catalunya)
+
+Thesis: [From Repository to Deployment: Optimizing IaC Development and Management](https://upcommons.upc.edu/entities/publication/9e53b67f-8097-485e-9143-bab48c0c7a42)
