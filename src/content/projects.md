@@ -22,9 +22,14 @@ My personal development environment configuration: shell, editor, tools, and sys
 
 [View on GitHub](https://github.com/JordiiBru/dotfiles)
 
-## Terraform Monorepo
+## Bachelor's Thesis
+<span class="date">2024 · UPC-FIB · 9.3/10</span>
 
-A scalable solution for managing Infrastructure as Code using Terraform. Includes an automated CI/CD pipeline with Terragrunt, TFLint, TFSec, and Infracost for efficient, secure, and cost-effective infrastructure management.
+**From Repository to Deployment: Optimizing IaC Development and Management**
+
+Examines Infrastructure as Code and its impact on platform and development teams. Covers theoretical foundations of IaC and its relationship with DevOps, followed by two technical tracks: building a GitOps-based auto-deployment repository, and implementing IaC at Mango to bring infrastructure closer to developers. Includes a CI/CD tool to evaluate merge request costs before applying real changes.
+
+[Source](https://upcommons.upc.edu/entities/publication/9e53b67f-8097-485e-9143-bab48c0c7a42)
 
 ---
 

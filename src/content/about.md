@@ -2,19 +2,19 @@
 title: About Me
 ---
 
-Hi! I'm Jordi, a Computer Engineering graduate from UPC-FIB and a **Platform Engineer**.
+Hi, I'm Jordi. **Platform Engineer** and Computer Engineering graduate from UPC-FIB, majoring in [Information Technologies](https://www.fib.upc.edu/es/grados/grado-en-ingenieria-informatica/plan-de-estudios/especialidades/tecnologias-de-la-informacion).
 
 My background is in **DevOps**, and I've followed its natural evolution into **Platform Engineering**: building internal platforms, self-service infrastructure, and the tooling that lets teams ship faster without sacrificing reliability.
 
-I'm also into **AI and automation**. I build AI-powered agents for personal use and I enjoy understanding how things work under the hood.
+I'm a strong believer in **self-hosting** and **open source**. Owning your stack, controlling your data, and understanding what runs underneath shapes how I approach both work and personal projects.
 
-I work daily with **Kubernetes**, **Terraform**, **AWS**, and **Linux**, and I run my own homelab to keep experimenting outside of work.
+I love **automating everything**: if a task can be automated, it will be. I'm also genuinely into **AI**: building agents, integrating models into real workflows, and pushing what's actually useful. And I never stop learning. There's always something to understand, build, or break.
 
 ---
 
 ## Skills
 
-- **Infrastructure:** Kubernetes, Terraform, AWS, Proxmox, Linux
+- **Infrastructure:** Kubernetes, Terraform, AWS, Proxmox
 - **Languages:** Go, Python, Java, C
 - **Practices:** GitOps, CI/CD, Platform Engineering, IaC, Observability
 
@@ -29,7 +29,7 @@ I work daily with **Kubernetes**, **Terraform**, **AWS**, and **Linux**, and I r
 
 ## Life
 
-I love nature and animals. Currently living with my three dogs: Kiwi, Groucho, and Wanda (not the bot). I played basketball for most of my life, and even though I don't play anymore, the discipline and teamwork stuck with me.
+I love nature and animals. Currently living with my three dogs: Kiwi, Groucho, and Wanda. I played basketball for most of my life, and even though I don't play anymore, the discipline and teamwork stuck with me.
 
 ## Gaming
 
@@ -43,6 +43,7 @@ Still learning. Getting into the math behind nutrition and training, and buildin
 
 - One movie: [Project Hail Mary](https://www.imdb.com/title/tt12042730/)
 - One show: [The Office](https://www.imdb.com/title/tt0386676/)
+- One book: [La sombra del viento](https://en.wikipedia.org/wiki/The_Shadow_of_the_Wind)
 
 ---
 

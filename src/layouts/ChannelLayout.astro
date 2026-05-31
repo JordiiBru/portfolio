@@ -12,7 +12,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/faro.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" />
     <title>{title} | Jordi Bru Carci</title>
   </head>
   <body>
@@ -36,8 +36,6 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-
   * {
     margin: 0;
     padding: 0;
@@ -45,7 +43,8 @@ const { title } = Astro.props;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
     background: #fff;
     color: #111;
     -webkit-font-smoothing: antialiased;
@@ -107,8 +106,9 @@ const { title } = Astro.props;
   }
 
   .page-title {
+    font-family: 'ClashDisplay-Variable', 'Clash Display', sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1;
     margin-bottom: 2.5rem;
@@ -121,8 +121,9 @@ const { title } = Astro.props;
   }
 
   .body h2 {
+    font-family: 'ClashDisplay-Variable', 'Clash Display', sans-serif;
     font-size: 1.125rem;
-    font-weight: 900;
+    font-weight: 600;
     color: #111;
     margin-top: 2.5rem;
     margin-bottom: 0.5rem;
@@ -135,8 +136,9 @@ const { title } = Astro.props;
   }
 
   .body h3 {
+    font-family: 'ClashDisplay-Variable', 'Clash Display', sans-serif;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #111;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;

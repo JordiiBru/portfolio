@@ -10,7 +10,7 @@
 Editorial minimalist aesthetic, inspired by Onomatopee / Inventory Press. The visual language is built entirely on typography and whitespace. No shadows, no border-radius, no decorative elements.
 
 - **Base:** Black (`#111`) on white. High contrast, flat, no noise.
-- **Font:** Inter (400, 700, 900). Weight and size carry all hierarchy.
+- **Fonts:** Clash Display (headlines, weight 600) + Satoshi (body, weight 400/500/700). Both via Fontshare CDN. Weight and size carry all hierarchy.
 - **Lila (`#7c3aed`):** Used sparingly as accent only. Structural dividers (top/bottom `border`), hover underlines on links, arrow color on section rows, and active/flipped states on the avatar ring. Not for body text or backgrounds.
 - **Yellow (`#fde68a`):** Text selection highlight only.
 - When adding new UI elements, default to black/grey. Reach for lila only for interactive affordances or key structural lines.
