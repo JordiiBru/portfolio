@@ -13,7 +13,7 @@ Full **GitOps** workflow. Manifests in Git, **ArgoCD** syncs automatically, all 
 - **Media stack.** Jellyfin, Jellyseerr, Radarr, Sonarr, Prowlarr, qBittorrent.
 - **Services.** Uptime Kuma, KitchenOwl, Calibre, and more.
 - **Automation.** n8n as the workflow engine. Telegram bot interactions (torrent searches, recipe lookups), KFC order optimization, alerting integrations.
-- **Networking.** Traefik, ExternalDNS with Cloudflare, Tailscale, Nubulus tunnel.
+- **Networking.** Traefik, ExternalDNS with Cloudflare, Tailscale, [Nubulus tunnel](https://docs.nubulusnetwork.es/services/tunnels/home/).
 - **Monitoring.** Kube-Prometheus-Stack with Prometheus and Grafana.
 
 ---
@@ -34,7 +34,7 @@ And more! Every time I solve one thing, I find three more to automate.
 Named after characters from [The Fairly OddParents](https://en.wikipedia.org/wiki/The_Fairly_OddParents), because every infrastructure needs its magic.
 
 - **Wanda.** Deterministic alerting bot. Predefined alerts from Prometheus straight to Telegram.
-- **Cosmo.** AI-powered SRE agent built on Claude. Monitors the cluster, diagnoses issues, runs read-only inspections, and creates tickets. Operates via Telegram, CLI, and [paseo.sh](https://paseo.sh/) for autonomous agent sessions. Cosmo is multidisciplinary: beyond infrastructure, it handles fitness tracking, nutrition, and other areas, each with its own context window.
+- **Cosmo.** AI-powered agent built on Claude. Monitors the cluster, diagnoses issues, runs read-only inspections, and creates tickets. Operates via Telegram, CLI, and [paseo.sh](https://paseo.sh/) for autonomous agent sessions. Cosmo is multidisciplinary: beyond infrastructure, it handles fitness tracking, nutrition, and other areas, each with its own context window.
 
 ---
 

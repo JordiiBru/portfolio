@@ -12,6 +12,8 @@ A self-hosted k3s Kubernetes cluster running on Proxmox, with a full GitOps work
 
 A set of **n8n workflows** that scrape KFC promotions, parse combo pricing, and calculate the optimal order based on what I want to eat. Built with web scraping, form handling, and an optimizer logic node. One of those absurd side projects that actually saves money.
 
+[Try it out.](https://kfc.jordibru.cloud)
+
 ---
 
 ## Dotfiles

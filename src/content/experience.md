@@ -2,7 +2,7 @@
 title: Experience
 ---
 
-## SRE @ Mango
+## Platform Engineer @ Mango
 <span class="date">2024 – Present</span>
 
 Platform reliability, governance, and developer experience.
@@ -14,7 +14,7 @@ Platform reliability, governance, and developer experience.
 - **Developer Experience (DevEx)**: improving internal workflows so teams ship with confidence.
 - CI/CD with **Jenkins** and **GitHub Actions**.
 
-## SRE Intern @ Mango
+## Platform Engineer Intern @ Mango
 <span class="date">2023 – 2024</span>
 
 First hands-on experience with production Kubernetes, cloud infrastructure, and on-call workflows.
