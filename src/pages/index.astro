@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import notionIcon from '../assets/profile_pics/notion_icon.png';
+import linkedinIcon from '../assets/profile_pics/linkedin_icon.png';
 
 const sections = [
   { name: 'About', href: '/about', number: '01' },
@@ -28,8 +31,8 @@ const sections = [
         </div>
         <button class="avatar" id="avatar" aria-label="Flip profile image" tabindex="0">
           <div class="avatar-inner" id="avatar-inner">
-            <img src="/profile_pics/notion_icon.png" alt="Jordi Bru Carci" class="avatar-face avatar-front" />
-            <img src="/profile_pics/linkedin_icon.png" alt="Jordi Bru Carci" class="avatar-face avatar-back" />
+            <Image src={notionIcon} alt="Jordi Bru Carci" class="avatar-face avatar-front" loading="eager" fetchpriority="high" />
+            <Image src={linkedinIcon} alt="Jordi Bru Carci" class="avatar-face avatar-back" loading="eager" />
           </div>
         </button>
       </div>

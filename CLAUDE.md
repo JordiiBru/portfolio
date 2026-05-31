@@ -42,5 +42,12 @@ Use `<span class="date">2024 – Present</span>` after `## heading` for grey sub
 - `npm run build` -- static build to `dist/`
 - `npm run preview` -- preview built site
 
+## Performance
+
+- **Fonts**: Loaded async via `media="print" onload="this.media='all'"` + `preconnect` to avoid render-blocking. Fallback via `<noscript>`. Do not change this to a synchronous `<link rel="stylesheet">`.
+- **Images**: Avatar images live in `src/assets/profile_pics/`. Use `<Image>` from `astro:assets` — Astro converts them to WebP and injects correct dimensions (prevents CLS). Above-the-fold images get `loading="eager" fetchpriority="high"`.
+- **Sitemap**: Generated automatically by `@astrojs/sitemap` on build. Requires `site` set in `astro.config.mjs`.
+- **Lighthouse CI**: Runs on every PR via `treosh/lighthouse-ci-action`. Config in `.lighthouserc.yml`. Thresholds are set to `warn` (non-blocking) — tighten to `error` once baseline is established.
+
 ## i18n
 Not yet implemented. Structure ready for future translations. Do not translate until content is finalized.
