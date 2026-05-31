@@ -176,17 +176,20 @@ const sections = [
   .avatar::before {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 1px solid #ddd;
+    inset: -6px;
+    border: 1px dashed #ccc;
     border-radius: 50%;
+    animation: orbit 30s linear infinite;
     transition: border-color 0.3s ease;
   }
 
   .avatar:hover::before {
     border-color: #7c3aed;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   .avatar:focus-visible .avatar-inner {
@@ -222,6 +225,9 @@ const sections = [
   @media (prefers-reduced-motion: reduce) {
     .avatar-inner {
       transition: none;
+    }
+    .avatar::before {
+      animation: none;
     }
   }
 
