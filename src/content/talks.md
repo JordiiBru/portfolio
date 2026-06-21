@@ -3,7 +3,7 @@ title: Talks
 ---
 
 ## How does IaC help achieve the DevOps philosophy?
-<span class="date">Fabrics 2024 - Mango</span>
+<span class="date">Mango Fabrics 2024 - Barcelona</span>
 
 A talk exploring how Infrastructure as Code is not just a tooling choice but a fundamental enabler of DevOps culture, collaboration, and continuous delivery.
 

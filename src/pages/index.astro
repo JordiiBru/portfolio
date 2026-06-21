@@ -11,6 +11,10 @@ const sections = [
   { name: 'Talks', href: '/talks', number: '04' },
   { name: 'Hobbies', href: '/hobbies', number: '05' },
 ];
+
+// r=46 in viewBox 100x100 → circumference ≈ 289
+const R = 46;
+const CIRC = +(2 * Math.PI * R).toFixed(2);
 ---
 
 <Layout title="Jordi Bru Carci">
@@ -30,6 +34,35 @@ const sections = [
           <p class="subtitle">Infrastructure, automation, and everything in between.</p>
         </div>
         <button class="avatar" id="avatar" aria-label="Flip profile image" tabindex="0">
+          <!--
+            SVG rotated -90deg so the arc starts from 12 o'clock.
+            Two circles at the same radius:
+              ring-track  — static gray full circle (always visible)
+              ring-progress — lila arc that fills over 3s (the countdown)
+          -->
+          <svg class="avatar-ring" viewBox="0 0 100 100" overflow="visible" aria-hidden="true">
+            <circle
+              class="ring-track"
+              cx="50" cy="50" r={R}
+              fill="none" stroke="#e0e0e0" stroke-width="0.7"
+            />
+            <circle
+              class="ring-progress"
+              id="ring-progress"
+              cx="50" cy="50" r={R}
+              fill="none" stroke="#7c3aed" stroke-width="0.9"
+              stroke-linecap="round"
+              stroke-dasharray={CIRC}
+              stroke-dashoffset={CIRC}
+            />
+            <!-- Ripple circle: expands + fades when countdown completes -->
+            <circle
+              class="ring-ripple"
+              id="ring-ripple"
+              cx="50" cy="50" r={R}
+              fill="none" stroke="#7c3aed" stroke-width="0.9"
+            />
+          </svg>
           <div class="avatar-inner" id="avatar-inner">
             <Image src={notionIcon} alt="Jordi Bru Carci" class="avatar-face avatar-front" loading="eager" fetchpriority="high" widths={[110, 160, 220]} sizes="(max-width: 600px) 110px, clamp(100px, 16vw, 220px)" />
             <Image src={linkedinIcon} alt="Jordi Bru Carci" class="avatar-face avatar-back" loading="eager" widths={[110, 160, 220]} sizes="(max-width: 600px) 110px, clamp(100px, 16vw, 220px)" />
@@ -56,22 +89,54 @@ const sections = [
 </Layout>
 
 <script>
-  const btn = document.getElementById('avatar');
-  const inner = document.getElementById('avatar-inner');
-  if (btn && inner) {
-    let flipped = false;
-    btn.addEventListener('click', () => {
-      flipped = !flipped;
-      inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-      btn.classList.toggle('flipped', flipped);
-    });
-    btn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        btn.click();
-      }
-    });
+  const btn    = document.getElementById('avatar') as HTMLButtonElement | null;
+  const inner  = document.getElementById('avatar-inner');
+  const arc    = document.getElementById('ring-progress') as SVGCircleElement | null;
+  const ripple = document.getElementById('ring-ripple') as SVGCircleElement | null;
+
+  if (!btn || !inner || !arc || !ripple) throw new Error('missing avatar elements');
+
+  let flipped = false;
+  let pending = true;
+
+  function doFlip() {
+    flipped = !flipped;
+    inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    btn.classList.toggle('flipped', flipped);
   }
+
+  function dismissArc(fast: boolean) {
+    arc.style.transition = `opacity ${fast ? '0.15s' : '0.4s'} ease`;
+    arc.style.opacity = '0';
+  }
+
+  // Arc fills over 3s → ripple expands+fades → flip
+  arc.classList.add('counting');
+  arc.addEventListener('animationend', () => {
+    if (!pending) return;
+    pending = false;
+
+    ripple.classList.add('active');
+    doFlip();
+    dismissArc(false);
+  }, { once: true });
+
+  // Manual click: cancel everything, flip immediately
+  btn.addEventListener('click', () => {
+    if (pending) {
+      pending = false;
+      arc.classList.remove('counting');
+      dismissArc(true);
+    }
+    doFlip();
+  });
+
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
 </script>
 
 <style>
@@ -98,7 +163,6 @@ const sections = [
   }
 
   .name {
-
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -111,7 +175,6 @@ const sections = [
   }
 
   .header-links a {
-
     font-size: 0.875rem;
     font-weight: 400;
     letter-spacing: 0.05em;
@@ -167,6 +230,7 @@ const sections = [
   }
 
   .avatar {
+    display: block;
     width: clamp(100px, 16vw, 220px);
     height: clamp(100px, 16vw, 220px);
     flex-shrink: 0;
@@ -179,29 +243,40 @@ const sections = [
     position: relative;
   }
 
-  .avatar::before {
-    content: '';
+  /* Gap between image and ring: inset -16px gives ~10-14px actual gap */
+  .avatar-ring {
     position: absolute;
-    inset: -6px;
-    border: 1px dashed #ccc;
-    border-radius: 50%;
-    animation: orbit 30s linear infinite;
-    transition: border-color 0.3s ease;
+    inset: -9px;
+    width: calc(100% + 18px);
+    height: calc(100% + 18px);
+    /* rotate so progress starts from 12 o'clock */
+    transform: rotate(-90deg);
+    transform-origin: center;
+    pointer-events: none;
+  }
+
+  /* Transition on base element so it animates in both directions */
+  .ring-track {
+    transition: stroke 0.5s ease;
+  }
+
+  .avatar.flipped .ring-track {
+    stroke: #7c3aed;
   }
 
   @media (hover: hover) {
-    .avatar:hover::before {
-      border-color: #7c3aed;
+    .avatar:hover .ring-track {
+      stroke: #7c3aed;
     }
   }
 
-  .avatar.flipped::before {
-    border-color: #7c3aed;
+  /* The countdown arc: fills from dashoffset=CIRC to 0 over 3s */
+  .ring-progress.counting {
+    animation: countdown 3s linear forwards;
   }
 
-  @keyframes orbit {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  @keyframes countdown {
+    to { stroke-dashoffset: 0; }
   }
 
   .avatar:focus-visible .avatar-inner {
@@ -234,13 +309,26 @@ const sections = [
     transform: rotateY(180deg);
   }
 
+  /* Ripple: separate circle that expands outward and fades on completion */
+  .ring-ripple {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .ring-ripple.active {
+    animation: ripple-expand 0.5s ease-out forwards;
+  }
+
+  @keyframes ripple-expand {
+    0%   { transform: scale(1);    opacity: 0.7; }
+    100% { transform: scale(1.2);  opacity: 0;   }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .avatar-inner {
-      transition: none;
-    }
-    .avatar::before {
-      animation: none;
-    }
+    .avatar-inner { transition: none; }
+    .ring-progress.counting { animation: none; }
+    .ring-ripple.active { animation: none; }
   }
 
   .sections {
@@ -269,7 +357,6 @@ const sections = [
   }
 
   .section-number {
-
     font-size: 0.75rem;
     font-weight: 400;
     color: #767676;
@@ -294,7 +381,6 @@ const sections = [
   }
 
   .footer {
-
     display: flex;
     justify-content: space-between;
     padding-top: 1.5rem;
@@ -307,34 +393,12 @@ const sections = [
   }
 
   @media (max-width: 600px) {
-    .page {
-      padding: 1.5rem 1.25rem;
-    }
-
-    .header {
-      margin-bottom: 2rem;
-    }
-
-    .header-top {
-      margin-bottom: 1.5rem;
-    }
-
-    .hero {
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-    }
-
-    .title {
-      font-size: clamp(2rem, 10vw, 2.5rem);
-    }
-
-    .section-link {
-      padding: 1rem 0;
-    }
+    .page { padding: 1.5rem 1.25rem; }
+    .header { margin-bottom: 2rem; }
+    .header-top { margin-bottom: 1.5rem; }
+    .hero { align-items: flex-start; gap: 1rem; }
+    .avatar { width: 110px; height: 110px; }
+    .title { font-size: clamp(2rem, 10vw, 2.5rem); }
+    .section-link { padding: 1rem 0; }
   }
 </style>
