@@ -4,6 +4,9 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const description = `Jordi Bru Carci — ${title}. Platform Engineer @ Mango.`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/notion_icon.png', Astro.site);
 ---
 
 <!doctype html>
@@ -11,7 +14,17 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={`Jordi Bru Carci — ${title}. Platform Engineer @ Mango.`} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:title" content={`${title} | Jordi Bru Carci`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${title} | Jordi Bru Carci`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
     <link rel="icon" type="image/png" href="/notion_icon.png" />
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" media="print" onload="this.media='all'" />
