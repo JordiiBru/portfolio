@@ -1,0 +1,17 @@
+# Jordi Bru Carci
+
+> Platform Engineer @ Mango, based in Barcelona. Infrastructure, automation, and everything in between. Background in DevOps evolving into Platform Engineering: Kubernetes, Terraform, GitOps, CI/CD, self-hosting, and AI agents.
+
+## Pages
+
+- [About](https://jordibru.cloud/about): Background, skills (Kubernetes, Terraform, AWS, Proxmox, Go, Python), languages, and personal interests.
+- [Experience](https://jordibru.cloud/experience): Platform Engineer at Mango (2024-present), prior internship, certifications (HashiCorp Terraform Associate, Akamai Web Foundations), and Computer Engineering degree from UPC-FIB.
+- [Projects](https://jordibru.cloud/projects): Homelab (self-hosted k3s cluster with ArgoCD GitOps), El Meu Armari (wardrobe manager, Next.js/Prisma), KFC Optimizer (n8n workflows), dotfiles, bachelor's thesis on IaC, and this site.
+- [Talks](https://jordibru.cloud/talks): Conference talks on Infrastructure as Code and DevOps, and on running Black Friday infrastructure at scale with AWS Countdown.
+- [Hobbies](https://jordibru.cloud/hobbies): Homelab and self-hosting details.
+
+## Contact
+
+- Email: jordibru00@gmail.com
+- GitHub: https://github.com/JordiiBru
+- LinkedIn: https://www.linkedin.com/in/jordi-bru-carci/
