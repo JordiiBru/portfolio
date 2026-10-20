@@ -1,0 +1,50 @@
+---
+// Fonts are declared inline, not via the async Fontshare stylesheet: a late
+// stylesheet makes the browser paint the fallback first, then swap.
+// Preloaded faces are the above-the-fold ones; font-display: block keeps text
+// hidden for that short load instead of showing the fallback.
+const cdn = 'https://cdn.fontshare.com/wf';
+const clash600 = `${cdn}/FPDAZ2S6SW4QMSRIIKNNGTPM6VIXYMKO/5HNPQ453FRLIQWV2FNOBUU3FKTDZQVSG/Z3MGHFHX6DCTLQ55LJYRJ5MDCZPMFZU6.woff2`;
+const satoshi400 = `${cdn}/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2`;
+---
+
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href={clash600} crossorigin />
+<link rel="preload" as="font" type="font/woff2" href={satoshi400} crossorigin />
+<style is:global>
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('https://cdn.fontshare.com/wf/VFMK2COV3DN37JR7JQ4CAOJPZ7KWKNY7/ODD5YJNDLHZZB2MIT3DPVH4EIHAMZ34D/BSY64LPTT3OPLVKAZKL3AHKRWZ3D74AC.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('https://cdn.fontshare.com/wf/FPDAZ2S6SW4QMSRIIKNNGTPM6VIXYMKO/5HNPQ453FRLIQWV2FNOBUU3FKTDZQVSG/Z3MGHFHX6DCTLQ55LJYRJ5MDCZPMFZU6.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('https://cdn.fontshare.com/wf/BFBSY7LX5W2U2EROCLVVTQP4VS7S4PC3/IIUX4FGTMD2LK2VWD3RVTAS4SSMUN7B5/53RZKGODFYDW3QHTIL7IPOWTBCSUEZK7.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+  }
+</style>
