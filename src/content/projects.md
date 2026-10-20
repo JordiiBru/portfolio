@@ -6,7 +6,7 @@ title: Projects
 
 A self-hosted k3s Kubernetes cluster running on Proxmox, with a full GitOps workflow powered by ArgoCD. Monitoring with Prometheus and Grafana, media stack with Jellyfin, workflow automation with n8n, and more.
 
-[More details in Hobbies](/hobbies)
+[More details in Hobbies](/hobbies/)
 
 ## El Meu Armari (My Closet)
 
@@ -52,6 +52,6 @@ I like building small CLI tools and utilities, mostly in **Go**. Things like loc
 
 ## This site
 
-Built with **Astro**, deployed on my own [homelab](/hobbies).
+Built with **Astro**, deployed on my own [homelab](/hobbies/).
 
 [View on GitHub](https://github.com/JordiiBru/portfolio)
