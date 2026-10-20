@@ -44,7 +44,8 @@ Use `<span class="date">2024 – Present</span>` after `## heading` for grey sub
 
 ## Performance
 
-- **Fonts**: Loaded async via `media="print" onload="this.media='all'"` + `preconnect` to avoid render-blocking. Fallback via `<noscript>`. Do not change this to a synchronous `<link rel="stylesheet">`.
+- **Fonts**: Declared inline in `src/components/FontFaces.astro` (`@font-face` with `font-display: block`, plus `preload` for the above-the-fold woff2). Do not go back to the Fontshare stylesheet, sync or async: a late stylesheet paints the fallback first and then swaps. Add new weights there, and preload only what is above the fold.
+- **Avatar images**: `widths` on `<Image>` must reach 2x the rendered size (220px CSS gives 440). The source `notion_icon.png` is 400px, so its largest variant is 400w.
 - **Images**: Avatar images live in `src/assets/profile_pics/`. Use `<Image>` from `astro:assets` — Astro converts them to WebP and injects correct dimensions (prevents CLS). Above-the-fold images get `loading="eager" fetchpriority="high"`.
 - **Sitemap**: Generated automatically by `@astrojs/sitemap` on build. Requires `site` set in `astro.config.mjs`.
 - **Lighthouse CI**: Runs on every PR via `treosh/lighthouse-ci-action`. Config in `.lighthouserc.yml`. Thresholds are set to `warn` (non-blocking) — tighten to `error` once baseline is established.
