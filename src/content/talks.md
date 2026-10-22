@@ -11,3 +11,5 @@ A talk exploring how Infrastructure as Code is not just a tooling choice but a f
 <span class="date">AWS Summit 2026 - Madrid</span>
 
 How the Platform Engineering team at Mango used AWS Countdown to prepare, scale, and monitor infrastructure ahead of Black Friday, turning the most critical retail event of the year into a smooth operation.
+
+[LinkedIn post](https://www.linkedin.com/posts/jordi-bru-carci_awssummitmadrid2026-countdown-enterprisesupport-ugcPost-7470852841549578240-oIjF/)

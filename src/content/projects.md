@@ -18,9 +18,15 @@ Public repo, open to contributions.
 
 ## KFC Optimizer
 
-A set of **n8n workflows** that scrape KFC promotions, parse combo pricing, and calculate the optimal order based on what I want to eat. Built with web scraping, form handling, and an optimizer logic node. One of those absurd side projects that actually saves money.
+Started as a set of **n8n workflows** that scraped KFC promotions, parsed combo pricing, and calculated the cheapest order for what a group wants to eat. It now runs as a **Next.js** app self-hosted on my homelab, with a scheduled scraper, a SQLite catalog, and an optimizer that only recommends products it can classify. One of those absurd side projects that actually saves money.
 
 [Try it out.](https://kfc.jordibru.cloud)
+
+## Gasolineras Tracker
+
+Price history for every petrol station in Spain, with each one compared against its town's average. It runs on the Spanish Ministry's open data: a scheduled job precomputes static JSON files and nginx serves them, so there is no backend at request time. Built with **Python**, **SQLite**, and **nginx**, self-hosted on the homelab.
+
+[View on GitHub](https://github.com/JordiiBru/gasolineras-tracker)
 
 ---
 
