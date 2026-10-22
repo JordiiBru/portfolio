@@ -10,7 +10,8 @@ Platform reliability, governance, and developer experience.
 - Governance and standardization across the company, driving consistent practices across teams.
 - Building and expanding a **Terraform module catalog** for developers to self-service their deployments.
 - Kubernetes cluster management and platform tooling.
-- CDN management and optimization with Akamai.
+- **AWS at scale.** Using the breadth of its service catalog, with best practices and security as the baseline.
+- CDN management and optimization with Akamai, with strong hands-on experience in WAF.
 - **Developer Experience (DevEx)**: improving internal workflows so teams ship with confidence.
 - CI/CD with **Jenkins** and **GitHub Actions**.
 
